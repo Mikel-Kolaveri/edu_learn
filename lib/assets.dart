@@ -11,4 +11,5 @@ class Assets {
   static String onboardingImage1 = 'assets/onboarding/onboarding_image_1.png';
   static String onboardingImage2 = 'assets/onboarding/onboarding_image_2.png';
   static String onboardingImage3 = 'assets/onboarding/onboarding_image_3.png';
+  static String backIcon = 'assets/icons/back_icon.svg';
 }

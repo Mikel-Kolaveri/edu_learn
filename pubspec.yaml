@@ -23,4 +23,5 @@ flutter:
   assets:
     - assets/
     - assets/onboarding/
+    - assets/icons/
   uses-material-design: true

@@ -7,8 +7,13 @@ class SignUpPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return const Column(
-      children: [Header(), Text('Sign Up Page')],
+    return Column(
+      children: [
+        Header.signup(
+          onTap: () {},
+        ),
+        const Text('Sign Up Page')
+      ],
     );
   }
 }

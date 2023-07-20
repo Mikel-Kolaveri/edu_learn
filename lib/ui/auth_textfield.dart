@@ -35,7 +35,7 @@ class _AuthTextFieldState extends ConsumerState<AuthTextField> {
             ),
           ),
           hintText: widget.hintText,
-          hintStyle: fonts.pjs16GreyW500,
+          hintStyle: fonts.pjs16GreyHintW500,
           prefixIcon: Padding(
             padding: const EdgeInsets.only(left: 24.0, right: 16),
             child: Icon(widget.icon, color: colors.greyText),

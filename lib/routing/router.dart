@@ -15,9 +15,7 @@ final router = GoRouter(
     ),
     ShellRoute(
         builder: (context, state, child) => Scaffold(
-              body: SafeArea(
-                  child:
-                      Padding(padding: const EdgeInsets.all(16), child: child)),
+              body: SafeArea(child: child),
             ),
         routes: [
           GoRoute(

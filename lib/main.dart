@@ -1,9 +1,12 @@
+import 'package:edu_learn_app/routing/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import 'onboarding/onboarding.dart';
-
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final prefs = await SharedPreferences.getInstance();
+  skipOnboardingScreen = prefs.getBool('skipOnboarding') ?? false;
   runApp(const MainApp());
 }
 
@@ -12,11 +15,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ProviderScope(
-      child: MaterialApp(
-        home: Scaffold(
-          body: Onboarding(),
-        ),
+    return ProviderScope(
+      child: MaterialApp.router(
+        routerConfig: router,
       ),
     );
   }

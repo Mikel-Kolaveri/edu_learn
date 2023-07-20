@@ -1,6 +1,6 @@
 class Assets {
   Assets();
-
+  static String logo = 'assets/logo.svg';
   // Onboarding Images
   static String onboardingBackground1 =
       'assets/onboarding/onboarding_background_1.png';

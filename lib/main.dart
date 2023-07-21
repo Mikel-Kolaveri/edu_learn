@@ -17,6 +17,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         routerConfig: router,
       ),
     );

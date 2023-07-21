@@ -12,4 +12,7 @@ class Assets {
   static String onboardingImage2 = 'assets/onboarding/onboarding_image_2.png';
   static String onboardingImage3 = 'assets/onboarding/onboarding_image_3.png';
   static String backIcon = 'assets/icons/back_icon.svg';
+
+  static String facebookLogo = 'assets/icons/facebook_logo.svg';
+  static String googleLogo = 'assets/icons/google_logo.svg';
 }

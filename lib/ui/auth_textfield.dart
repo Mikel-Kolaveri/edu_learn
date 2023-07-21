@@ -6,14 +6,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class AuthTextField extends ConsumerStatefulWidget {
   const AuthTextField(
       {super.key,
-      this.isPassword = false,
+      this.isPasswordField = false,
+      this.keyboardType,
       required this.icon,
       required this.controller,
       required this.hintText});
   final IconData icon;
   final TextEditingController controller;
-  final bool isPassword;
+  final bool isPasswordField;
   final String hintText;
+  final TextInputType? keyboardType;
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _AuthTextFieldState();
@@ -24,7 +26,9 @@ class _AuthTextFieldState extends ConsumerState<AuthTextField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      obscureText: widget.isPassword && showPassword,
+      style: fonts.pjs16BlackW500,
+      keyboardType: widget.keyboardType,
+      obscureText: widget.isPasswordField && !showPassword,
       controller: widget.controller,
       decoration: InputDecoration(
           iconColor: colors.orange,
@@ -40,12 +44,11 @@ class _AuthTextFieldState extends ConsumerState<AuthTextField> {
             padding: const EdgeInsets.only(left: 24.0, right: 16),
             child: Icon(widget.icon, color: colors.greyText),
           ),
-          suffixIcon: widget.isPassword
+          suffixIcon: widget.isPasswordField
               ? Padding(
                   padding: const EdgeInsets.only(right: 16),
                   child: GestureDetector(
                     onTap: () {
-                      print(showPassword);
                       setState(() {
                         showPassword = !showPassword;
                       });
@@ -60,6 +63,18 @@ class _AuthTextFieldState extends ConsumerState<AuthTextField> {
           border: OutlineInputBorder(
             borderSide: BorderSide(color: colors.greyborder),
             borderRadius: const BorderRadius.all(
+              Radius.circular(15),
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: colors.greyborder),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(15),
+            ),
+          ),
+          errorBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.red),
+            borderRadius: BorderRadius.all(
               Radius.circular(15),
             ),
           )),

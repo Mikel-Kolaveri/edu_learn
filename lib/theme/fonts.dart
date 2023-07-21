@@ -13,6 +13,8 @@ class Fonts {
   TextStyle get _pjs25 => _plusJakartaSans.copyWith(fontSize: 25);
 
   TextStyle get _pjs13Grey => _pjs13.copyWith(color: colors.greyText);
+  TextStyle get _pjs13Orange => _pjs13.copyWith(color: colors.orange);
+  TextStyle get _pjs16Black => _pjs16.copyWith(color: colors.blackText);
   TextStyle get _pjs16Grey => _pjs16.copyWith(color: colors.greyText);
   TextStyle get _pjs16GreyHint => _pjs16.copyWith(color: colors.greyHintText);
   TextStyle get _pjs20Grey => _pjs20.copyWith(color: colors.greyText);
@@ -23,11 +25,15 @@ class Fonts {
 
   TextStyle get pjs13GreyW500 =>
       _pjs13Grey.copyWith(fontWeight: FontWeight.w500);
+  TextStyle get pjs13OrangeW500 =>
+      _pjs13Orange.copyWith(fontWeight: FontWeight.w500);
 
   TextStyle get pjs16GreyW400 =>
       _pjs16Grey.copyWith(fontWeight: FontWeight.w400);
   TextStyle get pjs16GreyW500 =>
       _pjs16Grey.copyWith(fontWeight: FontWeight.w500);
+  TextStyle get pjs16BlackW500 =>
+      _pjs16Black.copyWith(fontWeight: FontWeight.w500);
 
   TextStyle get pjs16GreyHintW500 =>
       _pjs16GreyHint.copyWith(fontWeight: FontWeight.w500);

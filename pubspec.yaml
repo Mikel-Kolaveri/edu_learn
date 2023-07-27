@@ -23,6 +23,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/
+    - assets/category_icons/
     - assets/onboarding/
     - assets/icons/
   uses-material-design: true

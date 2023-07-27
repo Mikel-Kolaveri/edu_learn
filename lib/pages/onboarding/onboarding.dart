@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../assets.dart';
+import '../../utils/assets.dart';
 import '../../theme/colors.dart';
 import '../../theme/fonts.dart';
 import '../../ui/button.dart';

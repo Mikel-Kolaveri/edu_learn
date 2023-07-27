@@ -66,7 +66,9 @@ class SignInPage extends ConsumerWidget {
                 const VGap(24),
                 Button(
                   text: 'Log in',
-                  onTap: () {},
+                  onTap: () {
+                    context.go(Routes.home);
+                  },
                 ),
                 const VGap(48),
                 const DividerText(),

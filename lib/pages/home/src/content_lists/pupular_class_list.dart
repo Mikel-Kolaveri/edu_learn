@@ -1,4 +1,4 @@
-import 'package:edu_learn_app/ui/class_card.dart';
+import 'package:edu_learn_app/ui/class_card_widget.dart';
 import 'package:edu_learn_app/utils/padded_listview.dart';
 import 'package:flutter/material.dart';
 
@@ -10,23 +10,23 @@ class PopularClassList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final list = [
-      ClassCard(
+      ClassCardWidget(
           image:
               Image.asset(Assets.classImageDigitalMarketing, fit: BoxFit.cover),
           title: 'Digital Marketing for beginners',
           price: 'Free',
           ratings: 1125),
-      ClassCard(
+      ClassCardWidget(
           image: Image.asset(Assets.classImageBecomeACopywriter),
           title: 'Become a Copywriter',
           price: '\$5',
           ratings: 780),
-      ClassCard(
+      ClassCardWidget(
           image: Image.asset(Assets.classImageSEOForBeginners),
           title: 'SEO for beginners',
           price: '\$8',
           ratings: 905),
-      ClassCard(
+      ClassCardWidget(
           image: Image.asset(Assets.classImageGoogleAdsForBeginners),
           title: 'Google Ads for beginners',
           price: '\$8',

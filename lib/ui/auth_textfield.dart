@@ -55,8 +55,8 @@ class _AuthTextFieldState extends ConsumerState<AuthTextField> {
                     },
                     child: Icon(
                         showPassword
-                            ? Icons.visibility_off_outlined
-                            : Icons.visibility_outlined,
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
                         color: colors.greyText),
                   ))
               : null,

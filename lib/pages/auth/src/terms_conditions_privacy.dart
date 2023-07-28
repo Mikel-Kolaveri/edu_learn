@@ -34,18 +34,12 @@ class TermsConditionsPrivacyPolicyText extends StatelessWidget {
         TextSpan(
             text: "EduLearn's Terms & Conditions ",
             style: orangeFont,
-            recognizer: TapGestureRecognizer()
-              ..onTap = () {
-                print('Terms & Conditions');
-              }),
+            recognizer: TapGestureRecognizer()..onTap = () {}),
         TextSpan(text: 'and ', style: greyFont),
         TextSpan(
             text: 'Privacy Policy',
             style: orangeFont,
-            recognizer: TapGestureRecognizer()
-              ..onTap = () {
-                print('Privacy Policy');
-              })
+            recognizer: TapGestureRecognizer()..onTap = () {})
       ]),
     );
   }

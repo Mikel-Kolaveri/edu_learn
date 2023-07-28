@@ -1,4 +1,4 @@
-import 'package:edu_learn_app/assets.dart';
+import 'package:edu_learn_app/utils/assets.dart';
 import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/theme/fonts.dart';
 import 'package:edu_learn_app/utils/gap.dart';

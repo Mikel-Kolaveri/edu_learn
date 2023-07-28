@@ -88,7 +88,9 @@ class SignUpPage extends ConsumerWidget {
                 const Spacer(),
                 Button(
                   text: 'Create a ccount',
-                  onTap: () {},
+                  onTap: () {
+                    context.go(Routes.home);
+                  },
                 ),
                 const VGap(48),
                 const DividerText(),

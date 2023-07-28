@@ -1,12 +1,13 @@
-import 'package:edu_learn_app/assets.dart';
+import 'package:edu_learn_app/utils/assets.dart';
 import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/theme/fonts.dart';
 import 'package:edu_learn_app/utils/gap.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-enum _Type { signin, signup, backButton }
+enum _Type { signin, signup, backButton, home }
 
 class Header extends ConsumerWidget {
   final _Type _type;
@@ -21,6 +22,11 @@ class Header extends ConsumerWidget {
     required this.onTap,
   }) : _type = _Type.signup;
 
+  const Header.home({
+    super.key,
+    required this.onTap,
+  }) : _type = _Type.home;
+
   const Header.backButton({
     super.key,
   })  : _type = _Type.backButton,
@@ -29,18 +35,7 @@ class Header extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     String text = '';
-    final logo = Row(
-      children: [
-        SvgPicture.asset(Assets.logo),
-        const HGap(8),
-        Text(
-          'EduLearn',
-          style: fonts.pjs25BlackW700,
-        ),
-      ],
-    );
-
-    //final authHeader =
+    var font = fonts.pjs25BlackW700;
     switch (_type) {
       case _Type.signin:
         {
@@ -54,19 +49,40 @@ class Header extends ConsumerWidget {
 
       case _Type.backButton:
         {}
+      case _Type.home:
+        {
+          text = '';
+          font = fonts.pjs25WhiteW700;
+        }
     }
 
-    final authHeader = [
-      logo,
-      const Spacer(),
-      GestureDetector(
-        onTap: onTap,
-        child: Text(
-          text,
-          style: fonts.pjs20OrangeW700,
-        ),
-      ),
-    ];
+    final logo = Row(
+      children: [
+        SvgPicture.asset(Assets.logo),
+        const HGap(8),
+        Text('EduLearn', style: font),
+      ],
+    );
+
+    final trailing = _type == _Type.home
+        ? Container(
+            padding: const EdgeInsets.all(8),
+            decoration: const BoxDecoration(
+                shape: BoxShape.circle, color: Color(0xFFFCD695)),
+            child: SvgPicture.asset(
+              Assets.notificationsIcon,
+              height: 20,
+              width: 20,
+            ))
+        : GestureDetector(
+            onTap: onTap,
+            child: Text(
+              text,
+              style: fonts.pjs20OrangeW700,
+            ),
+          );
+
+    final headerWithTrailing = [logo, const Spacer(), trailing];
 
     final backButtonHeader = [
       Container(
@@ -88,7 +104,8 @@ class Header extends ConsumerWidget {
 
     Widget test = Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: _type == _Type.backButton ? backButtonHeader : authHeader,
+      children:
+          _type == _Type.backButton ? backButtonHeader : headerWithTrailing,
       // children: _type == _Type.backButton ? authHeader : backButtonHeader,
     );
     return test;

@@ -1,3 +1,4 @@
+import 'package:edu_learn_app/pages/home/home_page.dart';
 import 'package:edu_learn_app/pages/onboarding/onboarding.dart';
 import 'package:edu_learn_app/pages/auth/signin_page.dart';
 import 'package:edu_learn_app/pages/auth/signup_page.dart';
@@ -25,6 +26,16 @@ final router = GoRouter(
           GoRoute(
             path: '/signup',
             builder: (context, state) => const SignUpPage(),
+          ),
+        ]),
+    ShellRoute(
+        builder: (context, state, child) => Scaffold(
+              body: SafeArea(child: child),
+            ),
+        routes: [
+          GoRoute(
+            path: '/home',
+            builder: (context, state) => const HomePage(),
           ),
         ]),
   ],

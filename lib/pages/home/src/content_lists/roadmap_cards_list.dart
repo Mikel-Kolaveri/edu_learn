@@ -1,6 +1,5 @@
 import 'package:edu_learn_app/ui/course_card.dart';
 import 'package:edu_learn_app/utils/assets.dart';
-import 'package:edu_learn_app/utils/gap.dart';
 import 'package:edu_learn_app/utils/padded_listview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

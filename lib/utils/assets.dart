@@ -51,6 +51,12 @@ class Assets {
       'assets/class_images/class_image_ui_ux_principles.png';
   static String classImageBasicHtml =
       'assets/class_images/class_image_basic_html.png';
+  static String classImageBecomeACopywriter =
+      'assets/class_images/class_image_become_copywriter.png';
+  static String classImageSEOForBeginners =
+      'assets/class_images/class_image_seo_for_beginners.png';
+  static String classImageGoogleAdsForBeginners =
+      'assets/class_images/class_image_google_ads_for_beginners.png';
 
 // Other
   static String notificationsIcon = 'assets/icons/notificaions_icon.svg';

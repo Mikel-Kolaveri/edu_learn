@@ -1,5 +1,6 @@
 import 'package:edu_learn_app/pages/home/src/content_lists/categories_list.dart';
 import 'package:edu_learn_app/pages/home/src/content_lists/freemium_class_list.dart';
+import 'package:edu_learn_app/pages/home/src/content_lists/pupular_class_list.dart';
 import 'package:edu_learn_app/pages/home/src/content_lists/roadmap_cards_list.dart';
 import 'package:edu_learn_app/pages/home/src/home_header.dart';
 import 'package:edu_learn_app/theme/fonts.dart';
@@ -39,13 +40,20 @@ class HomePage extends ConsumerWidget {
         ),
         const VGap(24),
         const RoadmapCardsList(),
-        const VGap(24),
+        const VGap(40),
         InfoRowSeeMore(
           text: 'Freemium class',
           onTap: () {},
         ),
         const VGap(24),
-        const FreemiumClassList()
+        const FreemiumClassList(),
+        const VGap(40),
+        InfoRowSeeMore(
+          text: 'Popular class',
+          onTap: () {},
+        ),
+        const VGap(24),
+        const PopularClassList()
       ],
     );
   }

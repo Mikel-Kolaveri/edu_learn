@@ -34,6 +34,27 @@ class Assets {
   static String categoryIconMarketing =
       'assets/category_icons/marketing_category_icon.svg';
 
+  // Course Icons
+  static String courseIconFigma = 'assets/course_icons/course_icon_figma.svg';
+  static String courseIconHTML5 = 'assets/course_icons/course_icon_html5.svg';
+  static String courseIconCSS3 = 'assets/course_icons/course_icon_css3.svg';
+  static String courseIconPython = 'assets/course_icons/course_icon_python.svg';
+  static String courseIconFlutter =
+      'assets/course_icons/course_icon_flutter.svg';
+
+  // Class Images
+  static String classImageDigitalMarketing =
+      'assets/class_images/class_image_digital_marketing.png';
+  static String classImageEnglishForFreelancers =
+      'assets/class_images/class_image_english_for_freelancers.png';
+  static String classImageUiUxDesignPrinciples =
+      'assets/class_images/class_image_ui_ux_principles.png';
+  static String classImageBasicHtml =
+      'assets/class_images/class_image_basic_html.png';
+
+// Other
   static String notificationsIcon = 'assets/icons/notificaions_icon.svg';
   static String backIcon = 'assets/icons/back_icon.svg';
+
+  static String ratingStarIcon = 'assets/rating_star_icon.svg';
 }

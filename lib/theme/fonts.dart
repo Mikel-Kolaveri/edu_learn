@@ -15,9 +15,12 @@ class Fonts {
 
   //----------------------------------------------------------------------------
 
+  TextStyle get _pjs10White => _pjs10.copyWith(color: colors.white);
   TextStyle get _pjs10Black => _pjs10.copyWith(color: colors.blackText);
+  TextStyle get _pjs10Grey => _pjs10.copyWith(color: colors.greyText);
 
   TextStyle get _pjs13Grey => _pjs13.copyWith(color: colors.greyText);
+  TextStyle get _pjs13Black => _pjs13.copyWith(color: colors.blackText);
   TextStyle get _pjs13Orange => _pjs13.copyWith(color: colors.orange);
 
   TextStyle get _pjs16Orange => _pjs16.copyWith(color: colors.orange);
@@ -35,10 +38,13 @@ class Fonts {
   TextStyle get _pjs25White => _pjs25.copyWith(color: colors.white);
 
   //----------------------------------------------------------------------------
-
+  TextStyle get pjs10BlackW400 =>
+      _pjs10Black.copyWith(fontWeight: FontWeight.w400);
   TextStyle get pjs16GreyW400 =>
       _pjs16Grey.copyWith(fontWeight: FontWeight.w400);
 
+  TextStyle get pjs10BlackW500 =>
+      _pjs10Black.copyWith(fontWeight: FontWeight.w500);
   TextStyle get pjs13GreyW500 =>
       _pjs13Grey.copyWith(fontWeight: FontWeight.w500);
   TextStyle get pjs13OrangeW500 =>
@@ -54,8 +60,16 @@ class Fonts {
   TextStyle get pjs20GreyW500 =>
       _pjs20Grey.copyWith(fontWeight: FontWeight.w500);
 
+  TextStyle get pjs10WhiteW700 =>
+      _pjs10White.copyWith(fontWeight: FontWeight.w700);
   TextStyle get pjs10BlackW700 =>
       _pjs10Black.copyWith(fontWeight: FontWeight.w700);
+  TextStyle get pjs10GreyW700 =>
+      _pjs10Grey.copyWith(fontWeight: FontWeight.w700);
+  TextStyle get pjs13BlackW700 =>
+      _pjs13Black.copyWith(fontWeight: FontWeight.w700);
+  TextStyle get pjs13GreyW700 =>
+      _pjs13Grey.copyWith(fontWeight: FontWeight.w700);
   TextStyle get pjs16BlackW700 =>
       _pjs16Black.copyWith(fontWeight: FontWeight.w700);
   TextStyle get pjs16OrangeW700 =>

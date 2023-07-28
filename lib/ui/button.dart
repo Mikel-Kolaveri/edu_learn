@@ -9,9 +9,11 @@ class Button extends ConsumerWidget {
   const Button({
     super.key,
     this.padding,
-    required this.text,
     this.width,
     this.trailing,
+    this.textStyle,
+    this.borderRadius,
+    required this.text,
     required this.onTap,
   });
 
@@ -20,6 +22,8 @@ class Button extends ConsumerWidget {
   final Widget? trailing;
   final VoidCallback onTap;
   final EdgeInsets? padding;
+  final TextStyle? textStyle;
+  final double? borderRadius;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,7 +32,8 @@ class Button extends ConsumerWidget {
       child: Container(
         decoration: BoxDecoration(
             color: colors.orange,
-            borderRadius: const BorderRadius.all(Radius.circular(15))),
+            borderRadius:
+                BorderRadius.all(Radius.circular(borderRadius ?? 15))),
         padding: padding ??
             const EdgeInsets.all(
                 14), //TODO: maybe check with height instead od padding
@@ -36,7 +41,7 @@ class Button extends ConsumerWidget {
         child: trailing == null
             ? Text(
                 text,
-                style: fonts.pjs20WhiteW700,
+                style: textStyle ?? fonts.pjs20WhiteW700,
                 textAlign: TextAlign.center,
               )
             : Row(

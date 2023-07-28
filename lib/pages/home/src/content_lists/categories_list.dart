@@ -19,7 +19,7 @@ class CategoriesList extends StatelessWidget {
             icon: SvgPicture.asset(Assets.categoryIconDesign)),
         LearningCategoyItem(
             onTap: () {},
-            text: 'Programmer',
+            text: 'Programming',
             icon: SvgPicture.asset(Assets.categoryIconProgramming)),
         LearningCategoyItem(
             onTap: () {},

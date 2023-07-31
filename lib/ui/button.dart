@@ -34,9 +34,7 @@ class Button extends ConsumerWidget {
             color: colors.orange,
             borderRadius:
                 BorderRadius.all(Radius.circular(borderRadius ?? 15))),
-        padding: padding ??
-            const EdgeInsets.all(
-                14), //TODO: maybe check with height instead od padding
+        padding: padding ?? const EdgeInsets.all(14),
         width: width ?? double.infinity,
         child: trailing == null
             ? Text(

@@ -12,7 +12,6 @@ class SearchTextField extends ConsumerStatefulWidget {
 }
 
 class _SearchTextFieldState extends ConsumerState<SearchTextField> {
-  //TODO: Add logic for unfocusing textfields on clicking outside
   @override
   Widget build(BuildContext context) {
     return TextFormField(

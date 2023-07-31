@@ -58,6 +58,13 @@ class Assets {
   static String classImageGoogleAdsForBeginners =
       'assets/class_images/class_image_google_ads_for_beginners.png';
 
+  // Navbar icons
+  static String navbarHomeIcon = 'assets/navbar_icons/navbar_home_icon.svg';
+  static String navbarEventIcon = 'assets/navbar_icons/navbar_event_icon.svg';
+  static String navbarClassIcon = 'assets/navbar_icons/navbar_class_icon.svg';
+  static String navbarProfileIcon =
+      'assets/navbar_icons/navbar_profile_icon.svg';
+
 // Other
   static String notificationsIcon = 'assets/icons/notificaions_icon.svg';
   static String backIcon = 'assets/icons/back_icon.svg';

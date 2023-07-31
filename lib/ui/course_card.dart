@@ -27,7 +27,7 @@ class CourseCard extends StatelessWidget {
       height: 232,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        border: Border.all(color: colors.greyborder, width: 0.5),
+        border: Border.all(color: colors.greyBorder, width: 0.5),
         borderRadius: const BorderRadius.all(
           Radius.circular(15),
         ),
@@ -37,14 +37,14 @@ class CourseCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           icon,
-          const VGap(24),
+          const GapV(24),
           Text(
             text,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: fonts.pjs13BlackW700,
           ),
-          const VGap(24),
+          const GapV(24),
           const Spacer(),
           Row(
             children: [
@@ -58,7 +58,7 @@ class CourseCard extends StatelessWidget {
                       style: fonts.pjs10GreyW700),
                 ),
               ),
-              const HGap(8),
+              const GapH(8),
               Expanded(
                 child: Container(
                   decoration: classLevelContainerDecoration,
@@ -72,7 +72,7 @@ class CourseCard extends StatelessWidget {
               ),
             ],
           ),
-          const VGap(24),
+          const GapV(24),
           Button(
             borderRadius: 10,
             padding: const EdgeInsets.all(8),

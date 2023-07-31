@@ -76,7 +76,7 @@ class _OnboardingState extends ConsumerState<Onboarding> {
     final buttonRow = Row(
       children: [
         Flexible(child: skipButton),
-        const HGap(16),
+        const GapH(16),
         Flexible(
           child: Button(
             text: 'Next',
@@ -127,7 +127,7 @@ class _OnboardingState extends ConsumerState<Onboarding> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               SizedBox(height: 310, child: _images[index]),
-                              const VGap(16),
+                              const GapV(16),
                               Column(
                                 children: [
                                   Text(
@@ -135,7 +135,7 @@ class _OnboardingState extends ConsumerState<Onboarding> {
                                     style: fonts.pjs25OrangeW700,
                                     textAlign: TextAlign.center,
                                   ),
-                                  const VGap(16),
+                                  const GapV(16),
                                   Text(
                                     _descriptionTexts[index],
                                     style: fonts.pjs16GreyW400,

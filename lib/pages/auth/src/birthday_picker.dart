@@ -40,7 +40,7 @@ class _BirthdayPickerState extends ConsumerState<BirthdayPicker> {
       child: Container(
         height: 59,
         decoration: BoxDecoration(
-            border: Border.all(color: colors.greyborder),
+            border: Border.all(color: colors.greyBorder),
             borderRadius: const BorderRadius.all(Radius.circular(15))),
         child: Row(
           children: [

@@ -31,52 +31,52 @@ class SignInPage extends ConsumerWidget {
                     context.go(Routes.signup);
                   },
                 ),
-                const VGap(16),
+                const GapV(16),
                 Text(
                   'Welcome Back!',
                   style: fonts.pjs25OrangeW700,
                   textAlign: TextAlign.center,
                 ),
-                const VGap(16),
+                const GapV(16),
                 Text(
                   'Nice to see you back, you can log in and continue your learning progress',
                   style: fonts.pjs16GreyW400.copyWith(height: 1.5),
                   textAlign: TextAlign.center,
                 ),
-                const VGap(32),
+                const GapV(32),
                 AuthTextField(
                   icon: Icons.email_outlined,
                   controller: TextEditingController(),
                   hintText: 'Email',
                 ),
-                const VGap(24),
+                const GapV(24),
                 AuthTextField(
                   icon: Icons.lock_outline_rounded,
                   controller: TextEditingController(),
                   isPasswordField: true,
                   hintText: 'Password',
                 ),
-                const VGap(24),
+                const GapV(24),
                 Align(
                     alignment: Alignment.centerRight,
                     child: ForgotPasswordText(onTap: () {})),
-                const VGap(40),
+                const GapV(40),
                 const Spacer(),
                 const TermsConditionsPrivacyPolicyText.signin(),
-                const VGap(24),
+                const GapV(24),
                 Button(
                   text: 'Log in',
                   onTap: () {
                     context.go(Routes.home);
                   },
                 ),
-                const VGap(48),
+                const GapV(48),
                 const DividerText(),
-                const VGap(24),
+                const GapV(24),
                 SocialAuthButton.facebook(
                   onTap: () {},
                 ),
-                const VGap(24),
+                const GapV(24),
                 SocialAuthButton.google(
                   onTap: () {},
                 ),

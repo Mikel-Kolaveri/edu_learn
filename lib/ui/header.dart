@@ -1,3 +1,4 @@
+import 'package:edu_learn_app/routing/routes.dart';
 import 'package:edu_learn_app/utils/assets.dart';
 import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/theme/fonts.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 enum _Type { signin, signup, backButton, home }
 
@@ -59,7 +61,7 @@ class Header extends ConsumerWidget {
     final logo = Row(
       children: [
         SvgPicture.asset(Assets.logo),
-        const HGap(8),
+        const GapH(8),
         Text('EduLearn', style: font),
       ],
     );
@@ -85,18 +87,21 @@ class Header extends ConsumerWidget {
     final headerWithTrailing = [logo, const Spacer(), trailing];
 
     final backButtonHeader = [
-      Container(
-        width: 40,
-        height: 40,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          border: Border.all(color: colors.greyborder),
-        ),
-        child: SvgPicture.asset(
-          Assets.backIcon,
-          height: 16,
-          width: 16,
-          fit: BoxFit.scaleDown,
+      GestureDetector(
+        onTap: () => context.go(Routes.home),
+        child: Container(
+          width: 40,
+          height: 40,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: colors.greyBorder),
+          ),
+          child: SvgPicture.asset(
+            Assets.backIcon,
+            height: 16,
+            width: 16,
+            fit: BoxFit.scaleDown,
+          ),
         ),
       ),
       logo

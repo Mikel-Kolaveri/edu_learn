@@ -61,13 +61,13 @@ class _AuthTextFieldState extends ConsumerState<AuthTextField> {
                   ))
               : null,
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: colors.greyborder),
+            borderSide: BorderSide(color: colors.greyBorder),
             borderRadius: const BorderRadius.all(
               Radius.circular(15),
             ),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: colors.greyborder),
+            borderSide: BorderSide(color: colors.greyBorder),
             borderRadius: const BorderRadius.all(
               Radius.circular(15),
             ),

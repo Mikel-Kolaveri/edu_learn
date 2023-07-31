@@ -1,9 +1,11 @@
+import 'package:edu_learn_app/routing/routes.dart';
 import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/theme/fonts.dart';
 import 'package:edu_learn_app/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 class NavBar extends ConsumerStatefulWidget {
   const NavBar({super.key});
@@ -18,6 +20,7 @@ class _NavBarState extends ConsumerState<NavBar> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      index == 0 ? context.go(Routes.home) : context.go('/home/class_page');
     });
   }
 

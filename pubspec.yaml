@@ -23,6 +23,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/
+    - assets/navbar_icons/
     - assets/class_images/
     - assets/course_icons/
     - assets/category_icons/

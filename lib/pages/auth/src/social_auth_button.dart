@@ -39,7 +39,7 @@ class SocialAuthButton extends ConsumerWidget {
       child: Container(
         height: 66,
         decoration: BoxDecoration(
-          border: Border.all(color: colors.greyborder),
+          border: Border.all(color: colors.greyBorder),
           borderRadius: const BorderRadius.all(
             Radius.circular(15),
           ),
@@ -51,7 +51,7 @@ class SocialAuthButton extends ConsumerWidget {
               isSignUpButton! ? 'Sign up with' : 'Sign in with',
               style: fonts.pjs16GreyHintW500,
             ),
-            const HGap(16),
+            const GapH(16),
             SizedBox(
               width: 100,
               child: SvgPicture.asset(

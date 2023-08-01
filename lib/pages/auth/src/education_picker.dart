@@ -16,7 +16,7 @@ class _EducationPickerState extends ConsumerState<EducationPicker> {
   @override
   Widget build(BuildContext context) {
     final border = OutlineInputBorder(
-      borderSide: BorderSide(color: colors.greyborder),
+      borderSide: BorderSide(color: colors.greyBorder),
       borderRadius: const BorderRadius.all(
         Radius.circular(15),
       ),

@@ -38,17 +38,17 @@ class _UserProfileState extends ConsumerState<HomeHeader> {
               Header.home(
                 onTap: () {},
               ),
-              const VGap(24),
+              const GapV(24),
               Text(
                 'Hello User!',
                 style: fonts.pjs20WhiteW700,
               ),
-              const VGap(8),
+              const GapV(8),
               Text(
                 'Find the class or field you like here',
                 style: fonts.pjs16WhiteW500,
               ),
-              const VGap(24),
+              const GapV(24),
               const SearchTextField()
             ],
           ),

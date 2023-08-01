@@ -12,9 +12,9 @@ class PaddedListViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var paddedList = List.generate(children.length * 2,
-        (index) => index.isEven ? children[index ~/ 2] : const HGap(16));
+        (index) => index.isEven ? children[index ~/ 2] : const GapH(16));
 
-    paddedList.insert(0, const HGap(16));
+    paddedList.insert(0, const GapH(16));
 
     return SizedBox(
       height: height,

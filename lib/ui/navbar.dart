@@ -21,6 +21,7 @@ class _NavBarState extends ConsumerState<NavBar> {
     setState(() {
       _selectedIndex = index;
       index == 0 ? context.go(Routes.home) : context.go('/home/class_page');
+      // index == 2 ? context.go(Ro)
     });
   }
 

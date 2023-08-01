@@ -29,7 +29,7 @@ class LearningCategoyItem extends StatelessWidget {
             child: SizedBox(height: height, width: width, child: icon),
           ),
         ),
-        const VGap(8),
+        const GapV(8),
         Text(
           text,
           style: fonts.pjs10BlackW700,

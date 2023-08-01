@@ -1,6 +1,6 @@
 class Assets {
   Assets();
-  static String logo = 'assets/logo.svg';
+
   // Onboarding Images
   static String onboardingBackground1 =
       'assets/onboarding/onboarding_background_1.png';
@@ -65,9 +65,21 @@ class Assets {
   static String navbarProfileIcon =
       'assets/navbar_icons/navbar_profile_icon.svg';
 
+  // Mentor Social Media Icons
+  static String mentorSocialMediaIconInstagram =
+      'assets/mentor_social_media_icons/mentor_social_media_icon_instagram.svg';
+  static String mentorSocialMediaIconYoutube =
+      'assets/mentor_social_media_icons/mentor_social_media_icon_youtube.svg';
+  static String mentorSocialMediaIconTikTok =
+      'assets/mentor_social_media_icons/mentor_social_media_icon_tiktok.svg';
+
 // Other
+  static String logo = 'assets/logo.svg';
   static String notificationsIcon = 'assets/icons/notificaions_icon.svg';
   static String backIcon = 'assets/icons/back_icon.svg';
+  static String leacturePlayIcon = 'assets/lecture_play_icon.svg';
+  static String checkmarkIcon = 'assets/checkmark_icon.svg';
+  static String sampleMentorPicture = 'assets/sample_mentor_picture.png';
 
   static String ratingStarIcon = 'assets/rating_star_icon.svg';
 }

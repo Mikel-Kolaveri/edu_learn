@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class VGap extends StatelessWidget {
-  const VGap(this.height, {super.key});
+class GapV extends StatelessWidget {
+  const GapV(this.height, {super.key});
   final double height;
 
   @override
@@ -10,8 +10,8 @@ class VGap extends StatelessWidget {
   }
 }
 
-class HGap extends StatelessWidget {
-  const HGap(this.width, {super.key});
+class GapH extends StatelessWidget {
+  const GapH(this.width, {super.key});
 
   final double width;
 

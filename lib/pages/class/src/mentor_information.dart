@@ -1,4 +1,3 @@
-import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/theme/fonts.dart';
 import 'package:edu_learn_app/utils/gap.dart';
 import 'package:flutter/material.dart';
@@ -6,11 +5,11 @@ import 'package:flutter/material.dart';
 class MentorInformation extends StatelessWidget {
   const MentorInformation(
       {super.key,
-      this.image,
+      required this.image,
       required this.name,
       required this.occupation,
       this.workPlace});
-  final ImageProvider? image;
+  final ImageProvider<Object> image;
   final String name;
   final String occupation;
   final String? workPlace;
@@ -32,8 +31,8 @@ class MentorInformation extends StatelessWidget {
           width: 80,
           height: 80,
           decoration: BoxDecoration(
-              // image: DecorationImage(image: image, fit: BoxFit.scaleDown),
-              color: colors.greyText,
+              image: DecorationImage(image: image, fit: BoxFit.scaleDown),
+              // color: colors.greyText,
               shape: BoxShape.circle),
         ),
         const GapV(16),

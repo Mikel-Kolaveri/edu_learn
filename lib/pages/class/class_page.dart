@@ -2,6 +2,7 @@ import 'package:edu_learn_app/pages/class/src/benefits_samples.dart';
 import 'package:edu_learn_app/pages/class/src/class_video.dart';
 import 'package:edu_learn_app/pages/class/src/key_points_sample.dart';
 import 'package:edu_learn_app/pages/class/src/mentor_information.dart';
+import 'package:edu_learn_app/pages/class/src/mentor_social_button.dart';
 import 'package:edu_learn_app/pages/class/src/sample_lecture_list.dart';
 import 'package:edu_learn_app/pages/class/src/tools_required.dart';
 import 'package:edu_learn_app/theme/colors.dart';
@@ -124,10 +125,35 @@ class ClassPage extends StatelessWidget {
           style: fonts.pjs16GreyHintW500,
         ),
         const GapV(16),
-        const MentorInformation(
+        MentorInformation(
+          image: AssetImage(Assets.sampleMentorPicture),
           name: 'Jacob Jones',
           occupation: 'Sr. UI/UX Designer',
           workPlace: 'Malaka Company, SGP.',
+        ),
+        const GapV(32),
+        Text(
+          'Get in touch!',
+          style: fonts.pjs10BlackW400,
+        ),
+        const GapV(16),
+        Row(
+          children: [
+            MentorSocialButton(
+              onTap: () {},
+              icon: SvgPicture.asset(Assets.mentorSocialMediaIconInstagram),
+            ),
+            const GapH(8),
+            MentorSocialButton(
+              onTap: () {},
+              icon: SvgPicture.asset(Assets.mentorSocialMediaIconTikTok),
+            ),
+            const GapH(8),
+            MentorSocialButton(
+              onTap: () {},
+              icon: SvgPicture.asset(Assets.mentorSocialMediaIconYoutube),
+            ),
+          ],
         )
       ],
     );

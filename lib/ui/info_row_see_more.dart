@@ -12,24 +12,21 @@ class InfoRowSeeMore extends StatelessWidget {
   Widget build(BuildContext context) {
     final font16BlackW700 = fonts.pjs16BlackW700;
     final font16OrangeW700 = fonts.pjs16OrangeW700;
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            text,
-            style: font16BlackW700,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          text,
+          style: font16BlackW700,
+        ),
+        Text.rich(
+          TextSpan(
+            recognizer: TapGestureRecognizer()..onTap = onTap,
+            text: 'See more',
           ),
-          Text.rich(
-            TextSpan(
-              recognizer: TapGestureRecognizer()..onTap = onTap,
-              text: 'See more',
-            ),
-            style: font16OrangeW700,
-          ),
-        ],
-      ),
+          style: font16OrangeW700,
+        ),
+      ],
     );
   }
 }

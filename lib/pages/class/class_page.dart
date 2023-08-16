@@ -125,7 +125,7 @@ class ClassPage extends StatelessWidget {
           style: fonts.pjs16GreyHintW500,
         ),
         const GapV(16),
-        MentorInformation(
+        const MentorInformation(
           image: AssetImage(Assets.sampleMentorPicture),
           name: 'Jacob Jones',
           occupation: 'Sr. UI/UX Designer',

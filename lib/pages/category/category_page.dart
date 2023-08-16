@@ -23,90 +23,126 @@ class CategoryPage extends ConsumerStatefulWidget {
 
 class _CategoryPageState extends ConsumerState<CategoryPage> {
   Values filterValue = Values.all;
+  List<Widget> content = [
+    const GapV(24),
+    const FreemiumClassList(),
+  ];
   @override
   Widget build(BuildContext context) {
-    Widget addPadding(Widget text) => Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: text,
-        );
-    void test() {
+    String text = '';
+    void filter() {
       switch (filterValue) {
         case Values.all:
-          print('1');
+          content = [
+            addPadding(
+              InfoRowSeeMore(
+                text: 'Roadmap you might like',
+                onTap: () {},
+              ),
+            ),
+            const GapV(24),
+            const RoadmapCardsList(),
+            const GapV(40),
+            addPadding(
+              InfoRowSeeMore(
+                text: 'Freemium class',
+                onTap: () {},
+              ),
+            ),
+            const GapV(24),
+            const FreemiumClassList(),
+            const GapV(40),
+            addPadding(
+              InfoRowSeeMore(
+                text: 'Popular class',
+                onTap: () {},
+              ),
+            ),
+            const GapV(24),
+            const PopularClassList(),
+          ];
           break;
         case Values.roadmap:
-          print('2');
+          content = [
+            const GapV(24),
+            const RoadmapCardsList(),
+          ];
+          text = 'Roadmap';
           break;
         case Values.premium:
-          print('3');
+          content = [
+            const GapV(24),
+            const FreemiumClassList(),
+          ];
+          text = 'Premium';
           break;
         case Values.popular:
-          print('4');
+          content = [
+            const GapV(24),
+            const PopularClassList(),
+          ];
+          text = 'Popular';
           break;
         case Values.freemium:
-          print('5');
+          content = [
+            const GapV(24),
+            const FreemiumClassList(),
+          ];
+          text = 'Freemium';
           break;
         default:
       }
     }
 
-    return ListView(
-      padding: const EdgeInsets.symmetric(vertical: 24),
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            children: [
-              const Header.backButton(),
-              const GapV(36),
-              Row(
+    filter();
+
+    return Scaffold(
+      body: SafeArea(
+        child: ListView(
+          padding: const EdgeInsets.symmetric(vertical: 24),
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
                 children: [
-                  Text(
-                    'Category name',
-                    style: fonts.pjs25BlackW700,
-                  ),
-                  const GapH(16),
-                  SvgPicture.asset(Assets.categoryPageDesignIcon),
-                  const Spacer(),
-                  FilterMenu(
-                    (value) {
-                      filterValue = value;
-                      test();
-                    },
+                  const Header.backButton(),
+                  const GapV(36),
+                  Row(
+                    children: [
+                      Text(
+                        'Category name',
+                        style: fonts.pjs25BlackW700,
+                      ),
+                      const GapH(16),
+                      SvgPicture.asset(Assets.categoryPageDesignIcon),
+                      const Spacer(),
+                      FilterMenu(
+                        (value) {
+                          filterValue = value;
+                          setState(() {
+                            filter();
+                          });
+                        },
+                      ),
+                    ],
                   ),
                 ],
               ),
+            ),
+            const GapV(36),
+            if (filterValue != Values.all) ...[
+              const GapH(16),
+              addPadding(
+                Text(
+                  text,
+                  style: fonts.pjs16BlackW700,
+                ),
+              ),
             ],
-          ),
+            ...content,
+          ],
         ),
-        const GapV(36),
-        addPadding(
-          InfoRowSeeMore(
-            text: 'Roadmap you might like',
-            onTap: () {},
-          ),
-        ),
-        const GapV(24),
-        const RoadmapCardsList(),
-        const GapV(40),
-        addPadding(
-          InfoRowSeeMore(
-            text: 'Freemium class',
-            onTap: () {},
-          ),
-        ),
-        const GapV(24),
-        const FreemiumClassList(),
-        const GapV(40),
-        addPadding(
-          InfoRowSeeMore(
-            text: 'Popular class',
-            onTap: () {},
-          ),
-        ),
-        const GapV(24),
-        const PopularClassList(),
-      ],
+      ),
     );
   }
 }

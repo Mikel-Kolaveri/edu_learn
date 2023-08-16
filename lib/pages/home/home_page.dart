@@ -34,23 +34,29 @@ class HomePage extends ConsumerWidget {
             ],
           ),
         ),
-        InfoRowSeeMore(
-          text: 'Roadmap you might like',
-          onTap: () {},
+        addPadding(
+          InfoRowSeeMore(
+            text: 'Roadmap you might like',
+            onTap: () {},
+          ),
         ),
         const GapV(24),
         const RoadmapCardsList(),
         const GapV(40),
-        InfoRowSeeMore(
-          text: 'Freemium class',
-          onTap: () {},
+        addPadding(
+          InfoRowSeeMore(
+            text: 'Freemium class',
+            onTap: () {},
+          ),
         ),
         const GapV(24),
         const FreemiumClassList(),
         const GapV(40),
-        InfoRowSeeMore(
-          text: 'Popular class',
-          onTap: () {},
+        addPadding(
+          InfoRowSeeMore(
+            text: 'Popular class',
+            onTap: () {},
+          ),
         ),
         const GapV(24),
         const PopularClassList()

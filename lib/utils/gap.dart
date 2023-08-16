@@ -20,3 +20,8 @@ class GapH extends StatelessWidget {
     return SizedBox(width: width);
   }
 }
+
+Widget addPadding(Widget text) => Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: text,
+    );

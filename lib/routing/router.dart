@@ -9,6 +9,7 @@ import 'package:edu_learn_app/ui/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../pages/payment_page.dart';
 import '../ui/class_card.dart';
 import '../ui/class_card_widget.dart';
 import '../utils/assets.dart';
@@ -86,6 +87,18 @@ final router = GoRouter(
           GoRoute(
             path: '/cateogory_page',
             builder: (context, state) => const CategoryPage(),
+          )
+        ]),
+    ShellRoute(
+        builder: (context, state, child) {
+          return Scaffold(
+            body: SafeArea(child: child),
+          );
+        },
+        routes: [
+          GoRoute(
+            path: '/payment_page',
+            builder: (context, state) => const PaymentPage(),
           )
         ])
   ],

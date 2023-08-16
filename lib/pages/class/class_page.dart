@@ -5,6 +5,7 @@ import 'package:edu_learn_app/pages/class/src/mentor_information.dart';
 import 'package:edu_learn_app/pages/class/src/mentor_social_button.dart';
 import 'package:edu_learn_app/pages/class/src/sample_lecture_list.dart';
 import 'package:edu_learn_app/pages/class/src/tools_required.dart';
+import 'package:edu_learn_app/routing/routes.dart';
 import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/theme/fonts.dart';
 import 'package:edu_learn_app/ui/button.dart';
@@ -14,6 +15,7 @@ import 'package:edu_learn_app/utils/assets.dart';
 import 'package:edu_learn_app/utils/gap.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../ui/rating_row.dart';
 
@@ -79,7 +81,12 @@ class ClassPage extends StatelessWidget {
           text: classCard.price == 0
               ? 'Enroll for Free'
               : 'Buy class for ${classCard.price}\$',
-          onTap: () {},
+          onTap: () {
+            if (classCard.price == 0) {
+            } else {
+              context.go(Routes.paymentPage);
+            }
+          },
         ),
         const GapV(24),
         Divider(

@@ -1,7 +1,9 @@
 import 'package:edu_learn_app/pages/home/src/learning_category_item.dart';
+import 'package:edu_learn_app/routing/routes.dart';
 import 'package:edu_learn_app/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 class CategoriesList extends StatelessWidget {
   const CategoriesList({super.key});
@@ -14,7 +16,9 @@ class CategoriesList extends StatelessWidget {
       spacing: 16,
       children: [
         LearningCategoyItem(
-            onTap: () {},
+            onTap: () {
+              context.go(Routes.categoryPage);
+            },
             text: 'Design',
             icon: SvgPicture.asset(Assets.categoryIconDesign)),
         LearningCategoyItem(

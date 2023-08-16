@@ -5,4 +5,5 @@ abstract class Routes {
   static const home = '/home';
 
   static const homeClassPage = '/home/class_page';
+  static const categoryPage = '/cateogory_page';
 }

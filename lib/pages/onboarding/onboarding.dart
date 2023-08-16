@@ -161,9 +161,9 @@ class _OnboardingState extends ConsumerState<Onboarding> {
 }
 
 final _backgroundList = [
-  AssetImage(Assets.onboardingBackground1),
-  AssetImage(Assets.onboardingBackground2),
-  AssetImage(Assets.onboardingBackground3),
+  const AssetImage(Assets.onboardingBackground1),
+  const AssetImage(Assets.onboardingBackground2),
+  const AssetImage(Assets.onboardingBackground3),
 ];
 
 final _images = [

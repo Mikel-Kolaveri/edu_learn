@@ -1,3 +1,4 @@
+import 'package:edu_learn_app/pages/category/category_page.dart';
 import 'package:edu_learn_app/pages/class/class_page.dart';
 import 'package:edu_learn_app/pages/home/home_page.dart';
 import 'package:edu_learn_app/pages/onboarding/onboarding.dart';
@@ -75,5 +76,17 @@ final router = GoRouter(
             ),
           ),
         ]),
+    ShellRoute(
+        builder: (context, state, child) {
+          return Scaffold(
+            body: SafeArea(child: child),
+          );
+        },
+        routes: [
+          GoRoute(
+            path: '/cateogory_page',
+            builder: (context, state) => const CategoryPage(),
+          )
+        ])
   ],
 );

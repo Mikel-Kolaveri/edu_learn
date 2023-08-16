@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../pages/payment_page.dart';
+import '../pages/thank_you_page.dart';
 import '../ui/class_card.dart';
 import '../ui/class_card_widget.dart';
 import '../utils/assets.dart';
@@ -97,9 +98,14 @@ final router = GoRouter(
         },
         routes: [
           GoRoute(
-            path: '/payment_page',
-            builder: (context, state) => const PaymentPage(),
-          )
+              path: '/payment_page',
+              builder: (context, state) => const PaymentPage(),
+              routes: [
+                GoRoute(
+                  path: 'thank_you_page',
+                  builder: (context, state) => const ThankYouPage(),
+                )
+              ])
         ])
   ],
 );

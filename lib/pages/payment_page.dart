@@ -1,9 +1,11 @@
+import 'package:edu_learn_app/routing/routes.dart';
 import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/theme/fonts.dart';
 import 'package:edu_learn_app/ui/button.dart';
 import 'package:edu_learn_app/ui/header.dart';
 import 'package:edu_learn_app/utils/gap.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 Text _greyText(String text) => Text(
       text,
@@ -59,7 +61,9 @@ class PaymentPage extends StatelessWidget {
           const Spacer(),
           Button(
             text: 'Pay now',
-            onTap: () {},
+            onTap: () {
+              context.go(Routes.paymentPageThankYou);
+            },
           ),
           const GapV(16),
         ],
@@ -132,6 +136,7 @@ class _DetailsSection extends StatelessWidget {
         priceRow('Referral code discount', referralCodeDiscount),
         const GapV(16),
         _divider,
+        const GapV(16),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

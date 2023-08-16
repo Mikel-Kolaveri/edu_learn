@@ -92,6 +92,7 @@ class Assets {
   static const String sampleMentorPicture = 'assets/sample_mentor_picture.png';
   static const String categoryPageDesignIcon =
       'assets/category_page_design_icon.svg';
+  static const String thankYouPageImage = 'assets/thank_you_page_image.png';
 
   static const String ratingStarIcon = 'assets/rating_star_icon.svg';
 }

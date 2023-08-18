@@ -14,13 +14,21 @@ class NavBar extends ConsumerStatefulWidget {
   ConsumerState<ConsumerStatefulWidget> createState() => _NavBarState();
 }
 
+final _destinationList = [
+  Routes.home,
+  Routes.samplePage,
+  Routes.yourClassPage,
+  Routes.samplePage
+];
+
 class _NavBarState extends ConsumerState<NavBar> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      index == 0 ? context.go(Routes.home) : context.go('/home/class_page');
+      // index == 0 ? context.go(Routes.home) : context.go('/home/class_page');
+      context.go(_destinationList[index]);
       // index == 2 ? context.go(Ro)
     });
   }

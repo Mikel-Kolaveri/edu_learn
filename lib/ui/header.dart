@@ -9,7 +9,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-enum _Type { signin, signup, backButton, home }
+enum _Type { signin, signup, backButton, home, empty }
 
 class Header extends ConsumerWidget {
   final _Type _type;
@@ -32,6 +32,10 @@ class Header extends ConsumerWidget {
   const Header.backButton({
     super.key,
   })  : _type = _Type.backButton,
+        onTap = null;
+  const Header.empty({
+    super.key,
+  })  : _type = _Type.empty,
         onTap = null;
 
   @override
@@ -56,9 +60,12 @@ class Header extends ConsumerWidget {
           text = '';
           font = fonts.pjs25WhiteW700;
         }
+      case _Type.empty:
+        {}
     }
 
     final logo = Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
         SvgPicture.asset(Assets.logo),
         const GapH(8),
@@ -86,7 +93,7 @@ class Header extends ConsumerWidget {
 
     final headerWithTrailing = [logo, const Spacer(), trailing];
 
-    final backButtonHeader = [
+    var backButtonHeader = [
       GestureDetector(
         onTap: () => context.go(Routes.home),
         child: Container(
@@ -107,12 +114,17 @@ class Header extends ConsumerWidget {
       logo
     ];
 
-    Widget test = Row(
+    Widget header = Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children:
           _type == _Type.backButton ? backButtonHeader : headerWithTrailing,
       // children: _type == _Type.backButton ? authHeader : backButtonHeader,
     );
-    return test;
+
+    if (_type == _Type.empty) {
+      header = Center(child: logo);
+    }
+
+    return header;
   }
 }

@@ -4,8 +4,12 @@ abstract class Routes {
   static const signup = '/signup';
   static const home = '/home';
 
-  static const homeClassPage = '/home/class_page';
+  static const classPage = '/home/class_page';
   static const categoryPage = '/cateogory_page';
   static const paymentPage = '/payment_page';
   static const paymentPageThankYou = '/payment_page/thank_you_page';
+
+  static const yourClassPage = '/home/your_class_page';
+
+  static const samplePage = '/home/sample_page';
 }

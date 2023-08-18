@@ -1,8 +1,10 @@
+import 'package:edu_learn_app/routing/routes.dart';
 import 'package:edu_learn_app/ui/course_card.dart';
 import 'package:edu_learn_app/utils/assets.dart';
 import 'package:edu_learn_app/utils/padded_listview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 class RoadmapCardsList extends StatelessWidget {
   const RoadmapCardsList({super.key, this.padding});
@@ -16,7 +18,9 @@ class RoadmapCardsList extends StatelessWidget {
         text: 'Mastering UI/UX Design',
         classCount: 12,
         levelCount: 3,
-        onButtonTap: () {},
+        onButtonTap: () {
+          context.push(Routes.classPage);
+        },
       ),
       CourseCard(
         icon: SvgPicture.asset(Assets.courseIconHTML5),

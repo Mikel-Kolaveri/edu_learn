@@ -22,51 +22,55 @@ class PaymentPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Header.backButton(),
-          const GapV(32),
-          Text(
-            'Payment detail',
-            style: fonts.pjs25BlackW700,
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Header.backButton(),
+              const GapV(32),
+              Text(
+                'Payment detail',
+                style: fonts.pjs25BlackW700,
+              ),
+              const GapV(32),
+              _greyText(
+                'Discount & voucher',
+              ),
+              const GapV(16),
+              _ClickableRow(text: 'Discount', onTap: () {}),
+              const GapV(16),
+              _ClickableRow(text: 'Referral code', onTap: () {}),
+              const GapV(16),
+              _divider,
+              const GapV(8),
+              _greyText('Payment Method'),
+              const GapV(16),
+              _ClickableRow(
+                text: 'Payment',
+                onTap: () {},
+              ),
+              const GapV(16),
+              _divider,
+              const GapV(8),
+              const _DetailsSection(
+                classPrice: 10,
+                discount: 2,
+                referralCodeDiscount: 1,
+              ),
+              const Spacer(),
+              Button(
+                text: 'Pay now',
+                onTap: () {
+                  context.push(Routes.paymentPageThankYou);
+                },
+              ),
+              const GapV(16),
+            ],
           ),
-          const GapV(32),
-          _greyText(
-            'Discount & voucher',
-          ),
-          const GapV(16),
-          _ClickableRow(text: 'Discount', onTap: () {}),
-          const GapV(16),
-          _ClickableRow(text: 'Referral code', onTap: () {}),
-          const GapV(16),
-          _divider,
-          const GapV(8),
-          _greyText('Payment Method'),
-          const GapV(16),
-          _ClickableRow(
-            text: 'Payment',
-            onTap: () {},
-          ),
-          const GapV(16),
-          _divider,
-          const GapV(8),
-          const _DetailsSection(
-            classPrice: 10,
-            discount: 2,
-            referralCodeDiscount: 1,
-          ),
-          const Spacer(),
-          Button(
-            text: 'Pay now',
-            onTap: () {
-              context.go(Routes.paymentPageThankYou);
-            },
-          ),
-          const GapV(16),
-        ],
+        ),
       ),
     );
   }

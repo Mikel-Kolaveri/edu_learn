@@ -17,7 +17,7 @@ class CategoriesList extends StatelessWidget {
       children: [
         LearningCategoyItem(
             onTap: () {
-              context.go(Routes.categoryPage);
+              context.push(Routes.categoryPage);
             },
             text: 'Design',
             icon: SvgPicture.asset(Assets.categoryIconDesign)),

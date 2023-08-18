@@ -17,8 +17,10 @@ import '../ui/class_card_widget.dart';
 import '../utils/assets.dart';
 
 bool skipOnboardingScreen = false;
+final shellkey = GlobalKey<NavigatorState>();
 
 final router = GoRouter(
+  navigatorKey: shellkey,
   initialLocation: skipOnboardingScreen ? '/signin' : null,
   routes: [
     GoRoute(
@@ -26,6 +28,7 @@ final router = GoRouter(
       builder: (context, state) => const Onboarding(),
     ),
     ShellRoute(
+        // parentNavigatorKey: shellkey,
         builder: (context, state, child) => GestureDetector(
               onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
               child: Scaffold(
@@ -56,6 +59,7 @@ final router = GoRouter(
               builder: (context, state) => const HomePage(),
               routes: [
                 GoRoute(
+                  parentNavigatorKey: shellkey,
                   path: 'class_page',
                   builder: (context, state) => ClassPage(
                     classCardWidget: ClassCardWidget(
@@ -79,12 +83,15 @@ final router = GoRouter(
                   builder: (context, state) => const YourClassesPage(),
                 ),
                 GoRoute(
+                  // parentNavigatorKey: shellkey,
                   path: 'sample_page',
                   builder: (context, state) => const SamplePage(),
                 ),
               ]),
         ]),
     ShellRoute(
+        navigatorKey: shellkey,
+        // parentNavigatorKey: shellkey,
         builder: (context, state, child) {
           return Scaffold(
             body: SafeArea(child: child),
@@ -92,11 +99,13 @@ final router = GoRouter(
         },
         routes: [
           GoRoute(
+            parentNavigatorKey: shellkey,
             path: '/cateogory_page',
             builder: (context, state) => const CategoryPage(),
           )
         ]),
     ShellRoute(
+        navigatorKey: shellkey,
         builder: (context, state, child) {
           return Scaffold(
             body: SafeArea(child: child),
@@ -104,10 +113,12 @@ final router = GoRouter(
         },
         routes: [
           GoRoute(
+              parentNavigatorKey: shellkey,
               path: '/payment_page',
               builder: (context, state) => const PaymentPage(),
               routes: [
                 GoRoute(
+                  parentNavigatorKey: shellkey,
                   path: 'thank_you_page',
                   builder: (context, state) => const ThankYouPage(),
                 )

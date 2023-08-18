@@ -1,4 +1,3 @@
-import 'package:edu_learn_app/routing/routes.dart';
 import 'package:edu_learn_app/utils/assets.dart';
 import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/theme/fonts.dart';
@@ -95,7 +94,7 @@ class Header extends ConsumerWidget {
 
     var backButtonHeader = [
       GestureDetector(
-        onTap: () => context.go(Routes.home),
+        onTap: () => context.pop(),
         child: Container(
           width: 40,
           height: 40,

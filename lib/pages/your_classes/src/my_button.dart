@@ -72,5 +72,6 @@ class ButtonProperties {
 
 final _buttons = [
   ButtonProperties(isSelected: true, text: 'Subject matter'),
+  ButtonProperties(isSelected: true, text: ''),
   ButtonProperties(isSelected: false, text: 'About class'),
 ];

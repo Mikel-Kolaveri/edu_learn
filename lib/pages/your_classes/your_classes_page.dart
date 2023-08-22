@@ -4,8 +4,8 @@ import 'package:edu_learn_app/ui/your_class/your_class_widget.dart';
 import 'package:edu_learn_app/utils/gap.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../ui/class_card.dart';
-import '../utils/assets.dart';
+import '../../ui/class_card.dart';
+import '../../utils/assets.dart';
 
 class YourClassesPage extends StatelessWidget {
   const YourClassesPage({super.key});
@@ -24,6 +24,7 @@ class YourClassesPage extends StatelessWidget {
         const GapV(24),
         YourClassWidget(
           classCard: ClassCard(
+            classLevel: 'Beginner',
             image: Image.asset(Assets.classImageDigitalMarketing,
                 fit: BoxFit.cover),
             title: 'Digital Marketing for beginners',

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class ClassCard {
   const ClassCard(
       {required this.image,
+      required this.classLevel,
       required this.title,
       required this.price,
       required this.ratings,
@@ -18,4 +19,5 @@ class ClassCard {
   final int lessonCount;
   final String totalClassTime;
   final String classDescription;
+  final String classLevel;
 }

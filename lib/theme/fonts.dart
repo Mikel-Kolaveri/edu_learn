@@ -97,6 +97,8 @@ class Fonts {
       _pjs10Orange.copyWith(fontWeight: FontWeight.w700);
   TextStyle get pjs13BlackW700 =>
       _pjs13Black.copyWith(fontWeight: FontWeight.w700);
+  TextStyle get pjs13WhiteW700 =>
+      _pjs13White.copyWith(fontWeight: FontWeight.w700);
   TextStyle get pjs13GreyW700 =>
       _pjs13Grey.copyWith(fontWeight: FontWeight.w700);
   TextStyle get pjs13GreyHintW700 =>

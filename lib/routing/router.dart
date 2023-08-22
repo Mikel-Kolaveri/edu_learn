@@ -4,7 +4,7 @@ import 'package:edu_learn_app/pages/home/home_page.dart';
 import 'package:edu_learn_app/pages/onboarding/onboarding.dart';
 import 'package:edu_learn_app/pages/auth/signin_page.dart';
 import 'package:edu_learn_app/pages/auth/signup_page.dart';
-import 'package:edu_learn_app/pages/your_classes_page.dart';
+import 'package:edu_learn_app/pages/your_classes/your_classes_page.dart';
 import 'package:edu_learn_app/ui/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -12,6 +12,7 @@ import 'package:go_router/go_router.dart';
 import '../pages/payment_page.dart';
 import '../pages/sample_page.dart';
 import '../pages/thank_you_page.dart';
+import '../pages/your_classes/enrolled_class_page.dart';
 import '../ui/class_card.dart';
 import '../ui/class_card_widget.dart';
 import '../utils/assets.dart';
@@ -64,6 +65,7 @@ final router = GoRouter(
                   builder: (context, state) => ClassPage(
                     classCardWidget: ClassCardWidget(
                       classCard: ClassCard(
+                          classLevel: 'Beginner',
                           image: Image.asset(Assets.classImageSEOForBeginners),
                           title: 'SEO for beginners',
                           price: 8,
@@ -89,6 +91,24 @@ final router = GoRouter(
                 ),
               ]),
         ]),
+    GoRoute(
+      path: '/enrolled_class_page',
+      builder: (context, state) => EnrolledClassPage(
+        classCard: ClassCard(
+            classLevel: 'Beginner',
+            image: Image.asset(Assets.classImageSEOForBeginners),
+            title: 'SEO for beginners',
+            price: 8,
+            ratings: 905,
+            subTitle: 'Sample subtitle',
+            lessonCount: 10,
+            totalClassTime: '10 hours',
+            classDescription:
+                'This class is an early stage to learn more about Application'
+                'History, when the application was first created, by who the creator was, and '
+                'why the application was created to the development of the application today.'),
+      ),
+    ),
     ShellRoute(
         navigatorKey: shellkey,
         // parentNavigatorKey: shellkey,
@@ -122,7 +142,7 @@ final router = GoRouter(
                   path: 'thank_you_page',
                   builder: (context, state) => const ThankYouPage(),
                 )
-              ])
+              ]),
         ]),
   ],
 );

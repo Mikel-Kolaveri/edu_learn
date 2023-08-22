@@ -1,4 +1,5 @@
 import 'package:edu_learn_app/pages/class/src/sample_lecture_list.dart';
+import 'package:edu_learn_app/pages/your_classes/src/my_button.dart';
 import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/ui/button.dart';
 import 'package:edu_learn_app/ui/class_card.dart';
@@ -22,28 +23,7 @@ class EnrolledClassPage extends StatelessWidget {
           children: [
             const Header.backButton(),
             const GapV(32),
-            // Row(
-            //   children: [
-            //     Expanded(
-            //       flex: 11,
-            //       child: MyButton(
-            //         text: 'Subject matter',
-            //         onSelect: () {},
-            //       ),
-            //     ),
-            //     const Expanded(
-            //       flex: 2,
-            //       child: SizedBox(),
-            //     ),
-            //     Expanded(
-            //       flex: 11,
-            //       child: MyButton(
-            //         text: 'Subject matter',
-            //         onSelect: () {},
-            //       ),
-            //     )
-            //   ],
-            // ),
+            const ButtonRow(),
             const GapV(24),
             Text(
               classCard.title,
@@ -65,7 +45,7 @@ class EnrolledClassPage extends StatelessWidget {
                 children: [TextSpan(text: '(${classCard.totalClassTime})')],
               ),
             ),
-            const GapV(24),
+            const GapV(16),
             ...SampleLectureList.clickableList,
             // ...SampleLectureList.clickableList
             const GapV(16),

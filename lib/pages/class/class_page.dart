@@ -39,7 +39,6 @@ class ClassPage extends StatelessWidget {
             Text(
               classCard.title,
               style: fonts.pjs25BlackW700,
-              textAlign: TextAlign.center,
             ),
             const GapV(32),
             Text(

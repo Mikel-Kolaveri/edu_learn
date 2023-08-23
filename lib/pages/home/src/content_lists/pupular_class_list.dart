@@ -13,7 +13,7 @@ class PopularClassList extends StatelessWidget {
     final list = [
       ClassCardWidget(
         classCard: ClassCard(
-            classLevel: 'Beginner',
+            classLevel: 1,
             image: Image.asset(Assets.classImageDigitalMarketing,
                 fit: BoxFit.cover),
             title: 'Digital Marketing for beginners',
@@ -29,7 +29,7 @@ class PopularClassList extends StatelessWidget {
       ),
       ClassCardWidget(
         classCard: ClassCard(
-            classLevel: 'Beginner',
+            classLevel: 1,
             image: Image.asset(Assets.classImageBecomeACopywriter),
             title: 'Become a Copywriter',
             price: 5,
@@ -44,7 +44,7 @@ class PopularClassList extends StatelessWidget {
       ),
       ClassCardWidget(
         classCard: ClassCard(
-            classLevel: 'Beginner',
+            classLevel: 1,
             image: Image.asset(Assets.classImageSEOForBeginners),
             title: 'SEO for beginners',
             price: 8,
@@ -59,7 +59,7 @@ class PopularClassList extends StatelessWidget {
       ),
       ClassCardWidget(
         classCard: ClassCard(
-            classLevel: 'Beginner',
+            classLevel: 1,
             image: Image.asset(Assets.classImageGoogleAdsForBeginners),
             title: 'Google Ads for beginners',
             price: 8,

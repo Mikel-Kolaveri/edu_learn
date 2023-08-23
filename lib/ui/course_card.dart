@@ -1,25 +1,25 @@
+import 'package:edu_learn_app/routing/routes.dart';
 import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/theme/fonts.dart';
 import 'package:edu_learn_app/ui/button.dart';
+import 'package:edu_learn_app/ui/class_card.dart';
 import 'package:edu_learn_app/utils/gap.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
-class CourseCard extends StatelessWidget {
-  const CourseCard(
-      {super.key,
-      required this.icon,
-      required this.text,
-      required this.classCount,
-      required this.levelCount,
-      required this.onButtonTap});
-  final Widget icon;
-  final String text;
-  final int classCount;
-  final int levelCount;
-  final VoidCallback onButtonTap;
+import '../utils/providers.dart';
+
+class CourseCard extends ConsumerWidget {
+  const CourseCard({super.key, required this.icon, required this.classCard});
+  final Widget icon; //TODO: change later
+
+  final ClassCard classCard;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final lessonsCount = classCard.lessonCount;
+    final classLevel = classCard.classLevel;
     final classLevelContainerDecoration = BoxDecoration(
         borderRadius: BorderRadius.circular(10), color: colors.greyContainer);
     return Container(
@@ -39,7 +39,7 @@ class CourseCard extends StatelessWidget {
           icon,
           const GapV(24),
           Text(
-            text,
+            classCard.title,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: fonts.pjs13BlackW700,
@@ -54,7 +54,7 @@ class CourseCard extends StatelessWidget {
                   padding: const EdgeInsets.all(8),
                   child: Text(
                       textAlign: TextAlign.center,
-                      '$classCount ${classCount == 1 ? 'Class' : 'Classes'}',
+                      '$lessonsCount ${lessonsCount == 1 ? 'Class' : 'Classes'}',
                       style: fonts.pjs10GreyW700),
                 ),
               ),
@@ -65,7 +65,7 @@ class CourseCard extends StatelessWidget {
                   padding: const EdgeInsets.all(8),
                   child: Text(
                     textAlign: TextAlign.center,
-                    'Level $levelCount',
+                    'Level $classLevel',
                     style: fonts.pjs10GreyW700,
                   ),
                 ),
@@ -78,7 +78,10 @@ class CourseCard extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             text: 'Start journey',
             textStyle: fonts.pjs10WhiteW700,
-            onTap: onButtonTap,
+            onTap: () {
+              ref.watch(classCardProvider.notifier).state = classCard;
+              context.go(Routes.classPage);
+            },
           )
         ],
       ),

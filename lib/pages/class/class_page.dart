@@ -9,23 +9,36 @@ import 'package:edu_learn_app/routing/routes.dart';
 import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/theme/fonts.dart';
 import 'package:edu_learn_app/ui/button.dart';
-import 'package:edu_learn_app/ui/class_card_widget.dart';
 import 'package:edu_learn_app/ui/header.dart';
 import 'package:edu_learn_app/utils/assets.dart';
 import 'package:edu_learn_app/utils/gap.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../ui/class_card.dart';
 import '../../ui/rating_row.dart';
+import '../../utils/providers.dart';
 
-class ClassPage extends StatelessWidget {
-  const ClassPage({super.key, required this.classCardWidget});
-  final ClassCardWidget classCardWidget;
+class ClassPage extends ConsumerWidget {
+  const ClassPage({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return _ClassPageUI(
+      classCard: ref.watch(classCardProvider)!,
+    );
+  }
+}
+
+class _ClassPageUI extends StatelessWidget {
+  const _ClassPageUI({required this.classCard});
+  final ClassCard classCard;
 
   @override
   Widget build(BuildContext context) {
-    final classCard = classCardWidget.classCard;
+    // final classCard = classCard.classCard;
     const keyPoints = KeyPointsSample.list;
     const benefits = BenefitSamples.list;
 

@@ -14,7 +14,20 @@ class YourClassWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final card = classCard;
+    final String courseLevel;
+    switch (classCard.classLevel) {
+      case 1:
+        courseLevel = 'Beginner';
+        break;
+      case 2:
+        courseLevel = 'Intermediate';
+        break;
+      case 3:
+        courseLevel = 'Advanced';
+        break;
+      default:
+        courseLevel = 'Beginner';
+    }
     return GestureDetector(
       onTap: () {
         context.push(Routes.enrolledClassPage);
@@ -30,7 +43,7 @@ class YourClassWidget extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: SizedBox(
-                  height: double.infinity, width: 160, child: card.image),
+                  height: double.infinity, width: 160, child: classCard.image),
             ),
             const GapH(12),
             Expanded(
@@ -43,7 +56,7 @@ class YourClassWidget extends StatelessWidget {
                   ),
                   const GapV(8),
                   Text(
-                    card.classLevel,
+                    courseLevel,
                     style: fonts.pjs13GreyHintW700,
                   ),
                   const GapV(8),
@@ -61,7 +74,6 @@ class YourClassWidget extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5),
                           child: LinearProgressIndicator(
                             backgroundColor: colors.greyDot,
-                            // color: colors.orange,
                             minHeight: 10,
                             value: 5 / 10,
                             valueColor:

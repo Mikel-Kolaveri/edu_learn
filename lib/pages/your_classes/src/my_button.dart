@@ -1,10 +1,61 @@
 import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/theme/fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ButtonRow extends StatelessWidget {
+// class ButtonRow extends StatefulWidget {
+//   const ButtonRow({super.key});
+
+//   @override
+//   State<ButtonRow> createState() => _ButtonRowState();
+// }
+
+final toggleWidgetsProvider = StateProvider<bool>((ref) {
+  return true;
+});
+
+// class _ButtonRowState extends State<ButtonRow> {
+//   bool _toggleWidgets = true;
+//   @override
+//   Widget build(BuildContext context) {
+//     return Row(
+//       children: [
+//         ...List.generate(
+//             _buttons.length,
+//             (index) => index == 0 || index == 2
+//                 ? Expanded(
+//                     flex: 11,
+//                     child: _MyButton(
+//                       buttonProperties: _buttons[index],
+//                       onSelect: () {
+//                         setState(() {
+//                           for (var element in _buttons) {
+//                             element.isSelected = false;
+//                           }
+
+//                           _buttons[index].isSelected = true;
+
+//                           _toggleWidgets = _buttons[0].isSelected;
+//                         });
+//                       },
+//                     ),
+//                   )
+//                 : const Expanded(
+//                     flex: 2, child: SizedBox())), //   _buttons[index]),
+//       ],
+//     );
+//   }
+// }
+
+class ButtonRow extends ConsumerStatefulWidget {
   const ButtonRow({super.key});
 
+  @override
+  ConsumerState<ConsumerStatefulWidget> createState() => _ButtonRowState();
+}
+
+class _ButtonRowState extends ConsumerState<ButtonRow> {
+  // bool _toggleWidgets = true;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -16,7 +67,18 @@ class ButtonRow extends StatelessWidget {
                     flex: 11,
                     child: _MyButton(
                       buttonProperties: _buttons[index],
-                      onSelect: () {},
+                      onSelect: () {
+                        setState(() {
+                          for (var element in _buttons) {
+                            element.isSelected = false;
+                          }
+
+                          _buttons[index].isSelected = true;
+
+                          ref.watch(toggleWidgetsProvider.notifier).state =
+                              _buttons[0].isSelected;
+                        });
+                      },
                     ),
                   )
                 : const Expanded(
@@ -44,6 +106,7 @@ class _MyButtonState extends State<_MyButton> {
       onTap: () {
         setState(() {
           widget.buttonProperties.isSelected = true;
+          widget.onSelect();
         });
       },
       child: Container(

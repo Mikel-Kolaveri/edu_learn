@@ -10,6 +10,7 @@ abstract class Routes {
   static const paymentPageThankYou = '/payment_page/thank_you_page';
 
   static const yourClassPage = '/home/your_class_page';
+  static const enrolledClassPage = '/enrolled_class_page';
 
   static const samplePage = '/home/sample_page';
 }

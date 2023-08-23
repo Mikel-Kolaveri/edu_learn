@@ -5,7 +5,13 @@ class SampleLectureList {
     5,
     (index) => LectureItem(
       lectureNumber: index + 1,
-      onTap: () {},
+    ),
+  );
+
+  static final clickableList = List.generate(
+    5,
+    (index) => LectureItem.clickable(
+      lectureNumber: index + 1,
     ),
   );
 }

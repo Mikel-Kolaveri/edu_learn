@@ -9,6 +9,7 @@ class Button extends ConsumerWidget {
   const Button({
     super.key,
     this.padding,
+    this.color,
     this.width,
     this.trailing,
     this.textStyle,
@@ -24,6 +25,7 @@ class Button extends ConsumerWidget {
   final EdgeInsets? padding;
   final TextStyle? textStyle;
   final double? borderRadius;
+  final Color? color;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -31,7 +33,7 @@ class Button extends ConsumerWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-            color: colors.orange,
+            color: color ?? colors.orange,
             borderRadius:
                 BorderRadius.all(Radius.circular(borderRadius ?? 15))),
         padding: padding ?? const EdgeInsets.all(14),

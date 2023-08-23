@@ -14,7 +14,6 @@ import '../pages/sample_page.dart';
 import '../pages/thank_you_page.dart';
 import '../pages/your_classes/enrolled_class_page.dart';
 import '../ui/class_card.dart';
-import '../ui/class_card_widget.dart';
 import '../utils/assets.dart';
 
 bool skipOnboardingScreen = false;
@@ -60,26 +59,9 @@ final router = GoRouter(
               builder: (context, state) => const HomePage(),
               routes: [
                 GoRoute(
-                  parentNavigatorKey: shellkey,
-                  path: 'class_page',
-                  builder: (context, state) => ClassPage(
-                    classCardWidget: ClassCardWidget(
-                      classCard: ClassCard(
-                          classLevel: 'Beginner',
-                          image: Image.asset(Assets.classImageSEOForBeginners),
-                          title: 'SEO for beginners',
-                          price: 8,
-                          ratings: 905,
-                          subTitle: 'Sample subtitle',
-                          lessonCount: 10,
-                          totalClassTime: '10 hours',
-                          classDescription:
-                              'This class is an early stage to learn more about Application'
-                              'History, when the application was first created, by who the creator was, and '
-                              'why the application was created to the development of the application today.'),
-                    ),
-                  ),
-                ),
+                    parentNavigatorKey: shellkey,
+                    path: 'class_page',
+                    builder: (context, state) => const ClassPage()),
                 GoRoute(
                   path: 'your_class_page',
                   builder: (context, state) => const YourClassesPage(),
@@ -95,7 +77,7 @@ final router = GoRouter(
       path: '/enrolled_class_page',
       builder: (context, state) => EnrolledClassPage(
         classCard: ClassCard(
-            classLevel: 'Beginner',
+            classLevel: 1,
             image: Image.asset(Assets.classImageSEOForBeginners),
             title: 'SEO for beginners',
             price: 8,

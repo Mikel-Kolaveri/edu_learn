@@ -19,5 +19,5 @@ class ClassCard {
   final int lessonCount;
   final String totalClassTime;
   final String classDescription;
-  final String classLevel;
+  final int classLevel;
 }

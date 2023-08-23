@@ -12,7 +12,7 @@ class FreemiumClassList extends StatelessWidget {
     final cardList = [
       ClassCardWidget(
         classCard: ClassCard(
-          classLevel: 'Beginner',
+          classLevel: 1,
           image:
               Image.asset(Assets.classImageDigitalMarketing, fit: BoxFit.cover),
           title: 'Digital Marketing for beginners',
@@ -29,7 +29,7 @@ class FreemiumClassList extends StatelessWidget {
       ),
       ClassCardWidget(
         classCard: ClassCard(
-            classLevel: 'Beginner',
+            classLevel: 1,
             image: Image.asset(Assets.classImageEnglishForFreelancers,
                 fit: BoxFit.cover),
             title: 'English for Freelancer: Interview & work pr...',
@@ -45,7 +45,7 @@ class FreemiumClassList extends StatelessWidget {
       ),
       ClassCardWidget(
         classCard: ClassCard(
-            classLevel: 'Beginner',
+            classLevel: 1,
             image: Image.asset(Assets.classImageUiUxDesignPrinciples,
                 fit: BoxFit.cover),
             title: 'UI/UX Design Principles',
@@ -61,7 +61,7 @@ class FreemiumClassList extends StatelessWidget {
       ),
       ClassCardWidget(
         classCard: ClassCard(
-            classLevel: 'Beginner',
+            classLevel: 1,
             image: Image.asset(Assets.classImageBasicHtml, fit: BoxFit.cover),
             title: 'Basic HTML',
             subTitle: 'Sample subtitle',

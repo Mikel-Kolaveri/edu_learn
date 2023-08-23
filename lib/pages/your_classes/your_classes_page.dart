@@ -24,7 +24,7 @@ class YourClassesPage extends StatelessWidget {
         const GapV(24),
         YourClassWidget(
           classCard: ClassCard(
-            classLevel: 'Beginner',
+            classLevel: 1,
             image: Image.asset(Assets.classImageDigitalMarketing,
                 fit: BoxFit.cover),
             title: 'Digital Marketing for beginners',

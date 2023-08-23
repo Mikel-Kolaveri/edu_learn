@@ -17,7 +17,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../ui/class_card.dart';
 import '../../ui/rating_row.dart';
 import '../../utils/providers.dart';
 
@@ -26,22 +25,9 @@ class ClassPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return _ClassPageUI(
-      classCard: ref.watch(classCardProvider)!,
-    );
-  }
-}
-
-class _ClassPageUI extends StatelessWidget {
-  const _ClassPageUI({required this.classCard});
-  final ClassCard classCard;
-
-  @override
-  Widget build(BuildContext context) {
-    // final classCard = classCard.classCard;
     const keyPoints = KeyPointsSample.list;
     const benefits = BenefitSamples.list;
-
+    final classCard = ref.watch(classCardProvider)!;
     return Scaffold(
       body: SafeArea(
         child: ListView(

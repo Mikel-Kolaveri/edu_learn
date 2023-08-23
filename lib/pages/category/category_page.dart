@@ -3,11 +3,10 @@
 import 'package:edu_learn_app/pages/category/src/dropdown_menu.dart';
 import 'package:edu_learn_app/theme/fonts.dart';
 import 'package:edu_learn_app/ui/header.dart';
-import 'package:edu_learn_app/utils/assets.dart';
 import 'package:edu_learn_app/utils/gap.dart';
+import 'package:edu_learn_app/utils/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../ui/info_row_see_more.dart';
 import '../home/src/content_lists/freemium_class_list.dart';
@@ -29,6 +28,7 @@ class _CategoryPageState extends ConsumerState<CategoryPage> {
   ];
   @override
   Widget build(BuildContext context) {
+    final categoryModel = ref.watch(categoryModelProvider)!;
     String text = '';
     void filter() {
       switch (filterValue) {
@@ -110,11 +110,12 @@ class _CategoryPageState extends ConsumerState<CategoryPage> {
                   Row(
                     children: [
                       Text(
-                        'Category name',
+                        categoryModel.category,
                         style: fonts.pjs25BlackW700,
                       ),
                       const GapH(16),
-                      SvgPicture.asset(Assets.categoryPageDesignIcon),
+                      SizedBox(
+                          height: 24, width: 24, child: categoryModel.icon),
                       const Spacer(),
                       FilterMenu(
                         (value) {

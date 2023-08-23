@@ -1,9 +1,7 @@
-import 'package:edu_learn_app/pages/home/src/learning_category_item.dart';
-import 'package:edu_learn_app/routing/routes.dart';
+import 'package:edu_learn_app/pages/home/src/learning_category_widget.dart';
 import 'package:edu_learn_app/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
 
 class CategoriesList extends StatelessWidget {
   const CategoriesList({super.key});
@@ -15,40 +13,46 @@ class CategoriesList extends StatelessWidget {
       runSpacing: 32,
       spacing: 16,
       children: [
-        LearningCategoyItem(
-            onTap: () {
-              context.push(Routes.categoryPage);
-            },
-            text: 'Design',
-            icon: SvgPicture.asset(Assets.categoryIconDesign)),
-        LearningCategoyItem(
-            onTap: () {},
-            text: 'Programming',
-            icon: SvgPicture.asset(Assets.categoryIconProgramming)),
-        LearningCategoyItem(
-            onTap: () {},
-            text: 'Finance',
-            icon: SvgPicture.asset(Assets.categoryIconFinance)),
-        LearningCategoyItem(
-            onTap: () {},
-            text: 'Soft Skills',
-            icon: SvgPicture.asset(Assets.categoryIconSoftSkills)),
-        LearningCategoyItem(
-            onTap: () {},
-            text: 'Accountancy',
-            icon: SvgPicture.asset(Assets.categoryIconAccountancy)),
-        LearningCategoyItem(
-            onTap: () {},
-            text: 'Data Science',
-            icon: SvgPicture.asset(Assets.categoryIconDataScience)),
-        LearningCategoyItem(
-            onTap: () {},
-            text: 'Languages',
-            icon: SvgPicture.asset(Assets.categoryIconLanguages)),
-        LearningCategoyItem(
-            onTap: () {},
-            text: 'Marketing',
-            icon: SvgPicture.asset(Assets.categoryIconMarketing)),
+        LearningCategoyWidget(
+          categoryModel: LearningCategoryModel(
+              category: 'Design',
+              icon: SvgPicture.asset(Assets.categoryIconDesign)),
+        ),
+        LearningCategoyWidget(
+          categoryModel: LearningCategoryModel(
+              category: 'Programming',
+              icon: SvgPicture.asset(Assets.categoryIconProgramming)),
+        ),
+        LearningCategoyWidget(
+          categoryModel: LearningCategoryModel(
+              category: 'Finance',
+              icon: SvgPicture.asset(Assets.categoryIconFinance)),
+        ),
+        LearningCategoyWidget(
+          categoryModel: LearningCategoryModel(
+              category: 'Soft Skills',
+              icon: SvgPicture.asset(Assets.categoryIconSoftSkills)),
+        ),
+        LearningCategoyWidget(
+          categoryModel: LearningCategoryModel(
+              category: 'Accountancy',
+              icon: SvgPicture.asset(Assets.categoryIconAccountancy)),
+        ),
+        LearningCategoyWidget(
+          categoryModel: LearningCategoryModel(
+              category: 'Data Science',
+              icon: SvgPicture.asset(Assets.categoryIconDataScience)),
+        ),
+        LearningCategoyWidget(
+          categoryModel: LearningCategoryModel(
+              category: 'Languages',
+              icon: SvgPicture.asset(Assets.categoryIconLanguages)),
+        ),
+        LearningCategoyWidget(
+          categoryModel: LearningCategoryModel(
+              category: 'Marketing',
+              icon: SvgPicture.asset(Assets.categoryIconMarketing)),
+        ),
       ],
     );
   }

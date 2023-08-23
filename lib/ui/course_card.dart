@@ -80,7 +80,7 @@ class CourseCard extends ConsumerWidget {
             textStyle: fonts.pjs10WhiteW700,
             onTap: () {
               ref.watch(classCardProvider.notifier).state = classCard;
-              context.go(Routes.classPage);
+              context.push(Routes.classPage);
             },
           )
         ],

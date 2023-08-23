@@ -1,9 +1,9 @@
 import 'package:edu_learn_app/pages/class/src/benefits_samples.dart';
 import 'package:edu_learn_app/pages/class/src/class_video.dart';
 import 'package:edu_learn_app/pages/class/src/key_points_sample.dart';
+import 'package:edu_learn_app/pages/class/src/lecture_item.dart';
 import 'package:edu_learn_app/pages/class/src/mentor_information.dart';
 import 'package:edu_learn_app/pages/class/src/mentor_social_button.dart';
-import 'package:edu_learn_app/pages/class/src/sample_lecture_list.dart';
 import 'package:edu_learn_app/pages/class/src/tools_required.dart';
 import 'package:edu_learn_app/routing/routes.dart';
 import 'package:edu_learn_app/theme/colors.dart';

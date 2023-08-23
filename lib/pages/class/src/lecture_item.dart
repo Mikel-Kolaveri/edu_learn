@@ -1,31 +1,73 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/theme/fonts.dart';
 import 'package:edu_learn_app/utils/assets.dart';
 import 'package:edu_learn_app/utils/gap.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
+class SampleLectureList {
+  static final list = List.generate(
+    5,
+    (index) => LectureItem(
+      lectureNumber: index + 1,
+    ),
+  );
+
+  static List<LectureItem> clickableList(VoidCallback onTap) {
+    return List.generate(
+      5,
+      (index) => LectureItem.clickable(
+        lectureNumber: index + 1,
+        watchedTracker: WatchedTracker(isWatched: false),
+        onTap: onTap,
+      ),
+    );
+  }
+
+  // static final clickableList = List.generate(
+  //   5,
+  //   (index) => LectureItem.clickable(
+  //     lectureNumber: index + 1,
+  //     watchedTracker: WatchedTracker(isWatched: false),
+  //   ),
+  // );
+}
 
 enum _Type {
   clickable,
 }
 
 class LectureItem extends StatefulWidget {
-  const LectureItem.clickable({super.key, required this.lectureNumber})
+  const LectureItem({
+    super.key,
+    required this.lectureNumber,
+  })  : __type = null,
+        watchedTracker = null,
+        onTap = null;
+  const LectureItem.clickable(
+      {super.key,
+      required this.lectureNumber,
+      required this.watchedTracker,
+      required this.onTap})
       : __type = _Type.clickable;
-  const LectureItem({super.key, required this.lectureNumber}) : __type = null;
-  final int lectureNumber;
 
+  final int lectureNumber;
+  final WatchedTracker? watchedTracker;
   final _Type? __type;
+  final VoidCallback? onTap;
 
   @override
   State<LectureItem> createState() => _LectureItemState();
 }
 
 class _LectureItemState extends State<LectureItem> {
-  bool isWatched = false;
+  // bool isWatched = false;
 
   @override
   Widget build(BuildContext context) {
+    bool isWatched = widget.watchedTracker!.isWatched;
     final orangeHighOpacity = colors.orange.withAlpha(130);
     Widget current = SizedBox(
       child: Padding(
@@ -72,11 +114,18 @@ class _LectureItemState extends State<LectureItem> {
     if (widget.__type == _Type.clickable) {
       return GestureDetector(
           onTap: () => setState(() {
-                isWatched = true;
+                widget.watchedTracker!.isWatched = true;
               }),
           child: current);
     } else {
       return current;
     }
   }
+}
+
+class WatchedTracker {
+  WatchedTracker({
+    required this.isWatched,
+  });
+  bool isWatched;
 }

@@ -1,4 +1,3 @@
-import 'package:edu_learn_app/pages/class/src/sample_lecture_list.dart';
 import 'package:edu_learn_app/pages/your_classes/src/my_button.dart';
 import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/ui/button.dart';
@@ -14,70 +13,48 @@ import '../../utils/assets.dart';
 import '../class/src/benefits_samples.dart';
 import '../class/src/class_video.dart';
 import '../class/src/key_points_sample.dart';
+import '../class/src/lecture_item.dart';
 import '../class/src/mentor_information.dart';
 import '../class/src/mentor_social_button.dart';
 import '../class/src/tools_required.dart';
 
-// class EnrolledClassPage extends StatelessWidget {
-//   const EnrolledClassPage({super.key, required this.classCard});
-//   final ClassCard classCard;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: SafeArea(
-//         child: ListView(
-//           padding: const EdgeInsets.all(16),
-//           children: [
-//             const Header.backButton(),
-//             const GapV(32),
-//             const ButtonRow(),
-//             const GapV(24),
-//             Text(
-//               classCard.title,
-//               style: fonts.pjs25BlackW700,
-//               // textAlign: TextAlign.center,
-//             ),
-//             const GapV(32),
-//             Text(
-//               classCard.subTitle,
-//               style: fonts.pjs20BlackW700,
-//             ),
-//             const GapV(16),
-//             ClassVideo(subTitle: classCard.subTitle),
-//             const GapV(24),
-//             Text.rich(
-//               TextSpan(
-//                 text: '${classCard.lessonCount} lessons ',
-//                 style: fonts.pjs10GreyHintW500,
-//                 children: [TextSpan(text: '(${classCard.totalClassTime})')],
-//               ),
-//             ),
-//             const GapV(16),
-//             ...SampleLectureList.clickableList,
-//             // ...SampleLectureList.clickableList
-//             const GapV(16),
-//             Button(
-//               text: 'Get certificate',
-//               onTap: () {},
-//               color: colors.greyDot,
-//             )
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-class EnrolledClassPage extends ConsumerWidget {
+class EnrolledClassPage extends ConsumerStatefulWidget {
   const EnrolledClassPage({super.key, required this.classCard});
   final ClassCard classCard;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _EnrolledClassPageState();
+}
+
+class _EnrolledClassPageState extends ConsumerState<EnrolledClassPage> {
+  @override
+  Widget build(BuildContext context) {
     final toggleSwitch = ref.watch(toggleWidgetsProvider);
     const keyPoints = KeyPointsSample.list;
     const benefits = BenefitSamples.list;
+    final classCard = widget.classCard;
+    final lectureList = List.generate(
+      5,
+      (index) => LectureItem.clickable(
+        lectureNumber: index + 1,
+        watchedTracker: WatchedTracker(isWatched: false),
+        // onTap: () => setState(() {}),
+        onTap: () {},
+      ),
+    );
+    // final lectureList = SampleLectureList.clickableList(
+    //   () {
+    //     setState(() {
+    //       // print('yes');
+    //     });
+    //   },
+    // );
+
+    if (lectureList
+        .every((element) => element.watchedTracker!.isWatched == false)) {
+      print('false');
+    }
 
     final List<Widget> list1 = [
       Text(
@@ -95,12 +72,19 @@ class EnrolledClassPage extends ConsumerWidget {
         ),
       ),
       const GapV(16),
-      ...SampleLectureList.clickableList,
+      ...lectureList,
       const GapV(16),
       Button(
         text: 'Get certificate',
-        onTap: () {},
-        color: colors.greyDot,
+        onTap: () {
+          setState(() {});
+          print(lectureList
+              .every((element) => element.watchedTracker!.isWatched));
+        },
+        color: lectureList
+                .every((element) => element.watchedTracker!.isWatched == true)
+            ? colors.orange
+            : colors.greyDot,
       )
     ];
 
@@ -197,6 +181,7 @@ class EnrolledClassPage extends ConsumerWidget {
                   children: list2,
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: list1,
                 )),
           ],
@@ -205,3 +190,19 @@ class EnrolledClassPage extends ConsumerWidget {
     );
   }
 }
+
+
+// class EnrolledClassPage extends ConsumerStatefulWidget {
+//   const EnrolledClassPage({super.key});
+
+//   @override
+//   ConsumerState<ConsumerStatefulWidget> createState() => _EnrolledClassPageState();
+// }
+
+// class _EnrolledClassPageState extends ConsumerState<EnrolledClassPage> {
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container();
+//   }
+// }

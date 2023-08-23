@@ -2,9 +2,9 @@ import 'package:edu_learn_app/pages/class/src/sample_lecture_list.dart';
 import 'package:edu_learn_app/pages/your_classes/src/my_button.dart';
 import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/ui/button.dart';
-import 'package:edu_learn_app/ui/class_card.dart';
 import 'package:edu_learn_app/ui/header.dart';
 import 'package:edu_learn_app/utils/gap.dart';
+import 'package:edu_learn_app/utils/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
@@ -18,66 +18,17 @@ import '../class/src/mentor_information.dart';
 import '../class/src/mentor_social_button.dart';
 import '../class/src/tools_required.dart';
 
-// class EnrolledClassPage extends StatelessWidget {
-//   const EnrolledClassPage({super.key, required this.classCard});
-//   final ClassCard classCard;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: SafeArea(
-//         child: ListView(
-//           padding: const EdgeInsets.all(16),
-//           children: [
-//             const Header.backButton(),
-//             const GapV(32),
-//             const ButtonRow(),
-//             const GapV(24),
-//             Text(
-//               classCard.title,
-//               style: fonts.pjs25BlackW700,
-//               // textAlign: TextAlign.center,
-//             ),
-//             const GapV(32),
-//             Text(
-//               classCard.subTitle,
-//               style: fonts.pjs20BlackW700,
-//             ),
-//             const GapV(16),
-//             ClassVideo(subTitle: classCard.subTitle),
-//             const GapV(24),
-//             Text.rich(
-//               TextSpan(
-//                 text: '${classCard.lessonCount} lessons ',
-//                 style: fonts.pjs10GreyHintW500,
-//                 children: [TextSpan(text: '(${classCard.totalClassTime})')],
-//               ),
-//             ),
-//             const GapV(16),
-//             ...SampleLectureList.clickableList,
-//             // ...SampleLectureList.clickableList
-//             const GapV(16),
-//             Button(
-//               text: 'Get certificate',
-//               onTap: () {},
-//               color: colors.greyDot,
-//             )
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 class EnrolledClassPage extends ConsumerWidget {
-  const EnrolledClassPage({super.key, required this.classCard});
-  final ClassCard classCard;
+  const EnrolledClassPage({super.key});
+  // final ClassCard classCard;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final toggleSwitch = ref.watch(toggleWidgetsProvider);
     const keyPoints = KeyPointsSample.list;
     const benefits = BenefitSamples.list;
+
+    final classCard = ref.watch(classCardProvider)!;
 
     final List<Widget> list1 = [
       Text(
@@ -197,6 +148,7 @@ class EnrolledClassPage extends ConsumerWidget {
                   children: list2,
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: list1,
                 )),
           ],

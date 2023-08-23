@@ -2,18 +2,20 @@ import 'package:edu_learn_app/routing/routes.dart';
 import 'package:edu_learn_app/theme/colors.dart';
 import 'package:edu_learn_app/theme/fonts.dart';
 import 'package:edu_learn_app/utils/gap.dart';
+import 'package:edu_learn_app/utils/providers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../class_card.dart';
 
-class YourClassWidget extends StatelessWidget {
+class YourClassWidget extends ConsumerWidget {
   const YourClassWidget({super.key, required this.classCard});
 
   final ClassCard classCard;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final String courseLevel;
     switch (classCard.classLevel) {
       case 1:
@@ -30,6 +32,7 @@ class YourClassWidget extends StatelessWidget {
     }
     return GestureDetector(
       onTap: () {
+        ref.watch(classCardProvider.notifier).state = classCard;
         context.push(Routes.enrolledClassPage);
       },
       child: Container(

@@ -9,7 +9,7 @@ class SampleLectureList {
   );
 
   static final clickableList = List.generate(
-    5,
+    10,
     (index) => LectureItem.clickable(
       lectureNumber: index + 1,
     ),

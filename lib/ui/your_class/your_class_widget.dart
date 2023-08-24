@@ -54,7 +54,7 @@ class YourClassWidget extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Application History in the World',
+                    classCard.title,
                     style: fonts.pjs13BlackW500.copyWith(height: 1.3),
                   ),
                   const GapV(8),

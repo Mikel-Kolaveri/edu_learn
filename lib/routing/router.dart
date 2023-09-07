@@ -12,7 +12,7 @@ import 'package:go_router/go_router.dart';
 import '../pages/payment_page.dart';
 import '../pages/sample_page.dart';
 import '../pages/thank_you_page.dart';
-import '../pages/your_classes/enrolled_class_page.dart';
+import '../pages/your_classes/your_class_page.dart';
 
 bool skipOnboardingScreen = false;
 final shellkey = GlobalKey<NavigatorState>();
